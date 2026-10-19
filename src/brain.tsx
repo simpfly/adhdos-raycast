@@ -94,7 +94,7 @@ export function BrainBrowse() {
    return [parent, ...tasks.filter(task=>task.id).map(task => {
      const id = JSON.stringify(['subtask',item.id,task.id]);
      return <List.Item key={id} id={id} title={`　　↳ ${task.text}`} icon={task.done?Icon.CheckCircle:Icon.Circle}
-       keywords={[item.text || '',task.text]} 
+       keywords={[item.text || '',task.text]}
        detail={selected===id ? detail(task.text) : undefined}
        actions={<ActionPanel>
          <Action title={task.done?'撤销完成子任务':'完成子任务'} icon={task.done?Icon.Undo:Icon.CheckCircle} onAction={()=>change(item,{subtasks:[{id:task.id,done:!task.done}]})}/>

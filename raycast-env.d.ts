@@ -43,4 +43,3 @@ declare namespace Arguments {
   "text": string
 }
 }
-
