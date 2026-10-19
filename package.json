@@ -1,0 +1,77 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "adhdos",
+  "title": "ADHDOS",
+  "description": "Quickly browse and capture Board content and BrainDump tasks.",
+  "icon": "icon.png",
+  "author": "simpfly",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "board",
+      "title": "查看 Board",
+      "description": "搜索 Board 并预览内容与想法",
+      "mode": "view"
+    },
+    {
+      "name": "add-board",
+      "title": "添加 Board",
+      "description": "保存文字或链接到 Board",
+      "mode": "view"
+    },
+    {
+      "name": "braindump",
+      "title": "查看 BrainDump",
+      "description": "搜索未完成事项和子事项",
+      "mode": "view"
+    },
+    {
+      "name": "add-braindump",
+      "title": "添加 BrainDump",
+      "description": "快速记录 BrainDump 事项",
+      "mode": "view"
+    },
+    {
+      "name": "capture",
+      "title": "粘贴内容",
+      "description": "粘贴或读取剪贴板文字和链接，添加到 Board 或 BrainDump",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "text",
+          "type": "text",
+          "placeholder": "文本或链接（可留空读取剪贴板）",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "ADHDOS API 密钥",
+      "type": "password",
+      "required": true,
+      "description": "在 ADHDOS 设置 → MCP / API → API 获取，需要 Pro 和云同步。",
+      "placeholder": "adhdos_..."
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.8.10",
+    "@types/react": "^19.2.7",
+    "typescript": "^5.4.5",
+    "esbuild": "^0.25.12"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
